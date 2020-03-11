@@ -1,4 +1,10 @@
 
+.triangle-container {
+   overflow: hidden;
+   display: inline-block;
+   padding: 3.125rem;
+}
+
 .camera_x {
    animation: rotateX 5000ms linear infinite;
 }
@@ -20,9 +26,8 @@
    &_outer {
       position: absolute;
 
-      width: 250px;
-      height: 250px;
-      // background: #333;
+      width: 15.625rem;
+      height: 15.625rem;
 
       &::before {
          position: absolute;
@@ -32,22 +37,22 @@
 
          content: '';
          animation: slide 1500ms linear infinite;
+         background-color: #fff;
 
-         animation: gradient 5s ease infinite;
-
-         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-         background-size: 400% 400%;
-         // filter: blur(20px);
+         
       }
    }
 
    &_inner {
-      width: 240px;
-      height: 240px;
+      width: 15rem;
+      height: 15rem;
 
       transform: translateY(2px);
+      animation: gradient 5s ease infinite;
 
-      // background: #000;
+         background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+         background-size: 400% 400%;
+
 
       &::before {
          // content: '';
@@ -59,7 +64,6 @@
          animation: slide 1500ms -118ms linear infinite;
 
          background: #ccc;
-         // filter: blur(10px) contrast(5);
       }
    }
 

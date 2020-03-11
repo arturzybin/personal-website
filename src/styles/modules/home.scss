@@ -1,15 +1,20 @@
 .home {
    font-family: Raleway;
 
+   position: relative;
+
+   overflow: hidden;
+
    height: 100vh;
 
-   animation: gradient 15s ease infinite;
+   animation: gradient 10s ease infinite;
 
    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
    background-size: 400% 400%;
 
    &__content-container {
       position: absolute;
+      z-index: 2;
       top: 30%;
 
       box-sizing: content-box;
@@ -24,45 +29,21 @@
       font-size: 0;
 
       margin: 1rem 0;
-
-      cursor: default;
    }
 
    &__letter {
-      font-size: 3rem;
+      font-size: 3.5rem;
 
       display: inline-block;
+      transition-duration: .1s;
 
       &:hover {
-         mix-blend-mode: difference;
+         color: #000;
+         transition-duration: .1s;
       }
 
       &_animated {
          animation: jello-vertical .9s both;
-
-         @keyframes jello-vertical {
-            0% {
-               transform: scale3d(1, 1, 1);
-            }
-            30% {
-               transform: scale3d(.75, 1.25, 1);
-            }
-            40% {
-               transform: scale3d(1.25, .75, 1);
-            }
-            50% {
-               transform: scale3d(.85, 1.15, 1);
-            }
-            65% {
-               transform: scale3d(1.05, .95, 1);
-            }
-            75% {
-               transform: scale3d(.95, 1.05, 1);
-            }
-            100% {
-               transform: scale3d(1, 1, 1);
-            }
-         }
       }
    }
 
@@ -78,7 +59,6 @@
       height: 2rem;
       padding: .3rem 1rem;
 
-      cursor: pointer;
       transition: all .3s ease-out;
       text-decoration: none;
 
@@ -132,6 +112,54 @@
          }
       }
    }
+
+   &__triangle {
+      position: absolute;
+      z-index: 0;
+
+      animation: appear 10s;
+   }
+   &__triangle-1 {
+      right: 10%;
+      bottom: 0;
+
+      padding: 10rem;
+      .triangle {
+         &_outer {
+            width: 30rem;
+         }
+         &_inner {
+            width: 30rem;
+         }
+      }
+      .camera {
+         &_x {
+            animation-delay: 1s;
+         }
+         &_y {
+            animation-delay: 2s;
+         }
+      }
+   }
+   &__triangle-2 {
+      top: 20%;
+      left: 60%;
+
+      padding: 5rem;
+      .triangle {
+         &_outer {
+            height: 2rem;
+         }
+         &_inner {
+            height: 2rem;
+         }
+      }
+      .camera {
+         &_x {
+            animation-delay: 3s;
+         }
+      }
+   }
 }
 
 @keyframes gradient {
@@ -143,5 +171,36 @@
    }
    100% {
       background-position: 0 50%;
+   }
+}
+@keyframes appear {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+@keyframes jello-vertical {
+   0% {
+      transform: scale3d(1, 1, 1);
+   }
+   30% {
+      transform: scale3d(.75, 1.25, 1);
+   }
+   40% {
+      transform: scale3d(1.25, .75, 1);
+   }
+   50% {
+      transform: scale3d(.85, 1.15, 1);
+   }
+   65% {
+      transform: scale3d(1.05, .95, 1);
+   }
+   75% {
+      transform: scale3d(.95, 1.05, 1);
+   }
+   100% {
+      transform: scale3d(1, 1, 1);
    }
 }

@@ -1,5 +1,12 @@
-import '../styles/style';
+import '../styles/style.scss';
 
-import {setupHomeLettersAnimation} from './modules/home';
+import {
+   setupHomeLettersAnimation,
+   animateHomeLettersAppear
+} from './modules/home';
 
+import {animateCursorTrail} from './modules/cursorTrail';
+
+// animateCursorTrail();
+animateHomeLettersAppear();
 setupHomeLettersAnimation();

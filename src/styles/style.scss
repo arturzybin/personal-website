@@ -1,3 +1,8 @@
 @import './normalize';
+* {
+   // cursor: none;
+}
+
+@import './modules/cursort-trail.scss';
+@import './modules/triangles';
 @import './modules/home';
-@import './modules/home-triangles';
