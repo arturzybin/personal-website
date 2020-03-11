@@ -1,0 +1,147 @@
+.home {
+   font-family: Raleway;
+
+   height: 100vh;
+
+   animation: gradient 15s ease infinite;
+
+   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+   background-size: 400% 400%;
+
+   &__content-container {
+      position: absolute;
+      top: 30%;
+
+      box-sizing: content-box;
+      width: 100%;
+
+      text-align: center;
+
+      color: #fff;
+   }
+
+   &__title {
+      font-size: 0;
+
+      margin: 1rem 0;
+
+      cursor: default;
+   }
+
+   &__letter {
+      font-size: 3rem;
+
+      display: inline-block;
+
+      &:hover {
+         mix-blend-mode: difference;
+      }
+
+      &_animated {
+         animation: jello-vertical .9s both;
+
+         @keyframes jello-vertical {
+            0% {
+               transform: scale3d(1, 1, 1);
+            }
+            30% {
+               transform: scale3d(.75, 1.25, 1);
+            }
+            40% {
+               transform: scale3d(1.25, .75, 1);
+            }
+            50% {
+               transform: scale3d(.85, 1.15, 1);
+            }
+            65% {
+               transform: scale3d(1.05, .95, 1);
+            }
+            75% {
+               transform: scale3d(.95, 1.05, 1);
+            }
+            100% {
+               transform: scale3d(1, 1, 1);
+            }
+         }
+      }
+   }
+
+   &__wordspace {
+      font-size: 3rem;
+   }
+
+
+   &__begin {
+      font-size: 1.5rem;
+
+      box-sizing: content-box;
+      height: 2rem;
+      padding: .3rem 1rem;
+
+      cursor: pointer;
+      transition: all .3s ease-out;
+      text-decoration: none;
+
+      color: #fff;
+      border: .125rem solid #fff;
+      background-color: transparent;
+
+      &:hover {
+         transition: all .3s ease-out;
+
+         filter: invert(100%);
+
+         .home__begin-arrow {
+            transform: rotate(0);
+            polygon {
+               fill: #fff;
+
+               &.arrow-bottom {
+                  transform: translateY(-1rem);
+               }
+
+               &.arrow-top {
+                  transform: translateY(1rem);
+               }
+            }
+         }
+      }
+   }
+
+   &__begin-arrow {
+      position: relative;
+      top: .25rem;
+
+      width: 1.5rem;
+      height: 1.5rem;
+
+      transition: all .3s ease-out;
+      transform: rotate(-90deg);
+
+      polygon {
+         transition: all .3s ease-out;
+
+         fill: #fff;
+
+         &.arrow-middle {
+            opacity: .75;
+         }
+
+         &.arrow-top {
+            opacity: .5;
+         }
+      }
+   }
+}
+
+@keyframes gradient {
+   0% {
+      background-position: 0 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0 50%;
+   }
+}

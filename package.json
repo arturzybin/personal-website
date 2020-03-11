@@ -1,0 +1,52 @@
+{
+   "name": "personal-website",
+   "description": "Website of Artur Zybin",
+   "private": true,
+   "scripts": {
+     "dev": "npx cross-env NODE_ENV=development npx webpack --mode development",
+     "build": "npx cross-env NODE_ENV=production npx webpack --mode production",
+     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+     "predeploy": "npx cross-env NODE_ENV=production npx webpack --mode production",
+     "deploy": "gh-pages -d dist"
+   },
+   "repository": {
+     "type": "git",
+     "url": "git+https://github.com/ArturZybin/personal-website.git"
+   },
+   "author": "Artur Zybin <artur.zybin.work@gmail.com>",
+   "postcss": {
+     "plugins": {
+       "autoprefixer": {}
+     }
+   },
+   "browserslist": [
+     "last 2 version",
+     "not dead",
+     "iOS >= 9"
+   ],
+   "homepage": "https://github.com/ArturZybin/personal-website",
+   "devDependencies": {
+     "@babel/core": "^7.8.6",
+     "@babel/plugin-proposal-class-properties": "^7.8.3",
+     "@babel/preset-env": "^7.8.6",
+     "autoprefixer": "^9.7.4",
+     "babel-loader": "^8.0.6",
+     "clean-webpack-plugin": "^3.0.0",
+     "copy-webpack-plugin": "^5.1.1",
+     "cross-env": "^7.0.0",
+     "css-loader": "^3.4.2",
+     "file-loader": "^5.1.0",
+     "gh-pages": "^2.2.0",
+     "html-webpack-plugin": "^3.2.0",
+     "mini-css-extract-plugin": "^0.9.0",
+     "node-sass": "^4.13.1",
+     "optimize-css-assets-webpack-plugin": "^5.0.3",
+     "postcss-loader": "^3.0.0",
+     "sass-loader": "^8.0.2",
+     "terser-webpack-plugin": "^2.3.5",
+     "webpack": "^4.41.6",
+     "webpack-cli": "^3.3.11",
+     "webpack-dev-server": "^3.10.3"
+   }
+ }
+ 
