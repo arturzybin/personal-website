@@ -4,8 +4,7 @@ $blue-color: #00bcdd;
 $pink-color: #f0f;
 
 .skill {
-   line-height: 30px;
-   opacity: 0.1;
+   line-height: rem(35);
 
    position: relative;
    z-index: 1;
@@ -21,6 +20,7 @@ $pink-color: #f0f;
    letter-spacing: .075em;
    text-transform: uppercase;
 
+   opacity: 0;
    color: $slate-color;
    border: rem(3) $blue-color solid;
    border-image: linear-gradient(45deg, $blue-color 0%, $pink-color 100%);
@@ -70,10 +70,10 @@ $pink-color: #f0f;
 
    // Shadow
    &_active {
-      opacity: 1;
       transform: translate(rem(12),rem(-12));
-      //border-image-slice: 1;
 
+      opacity: 1;
+      //border-image-slice: 1;
       background-color: white;
       background-size: 90%;
       box-shadow: rem(-25) rem(25) rem(4) transparentize($slate-color,.9);
