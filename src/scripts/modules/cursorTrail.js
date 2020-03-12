@@ -17,13 +17,27 @@ function draw() {
   let x = mouse.x;
   let y = mouse.y;
 
+  const dotWidth = dots[0].node.clientWidth + 1;
+  const clientWidth = document.documentElement.clientWidth;
+  const dotHeight = dots[0].node.clientHeight + 1;
+  const clientHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+  );
+
   dots.forEach(function (dot, index, dots) {
     const nextDot = dots[index + 1] || dots[0];
 
     const randomX = Math.floor(Math.random() * 2) * (Math.round(Math.random()) * 2 - 1);
     const randomY = Math.floor(Math.random() * 2) * (Math.round(Math.random()) * 2 - 1);
-    dot.x = x + randomX;
-    dot.y = y + randomY;
+    // to avoid scrollbar appearance because of overflow
+    dot.x = (x + randomX > clientWidth - dotWidth) ?
+      clientWidth - dotWidth :
+      x + randomX;
+    dot.y = (y + randomY > clientHeight - dotHeight) ?
+      clientHeight - dotHeight :
+      y + randomY;
     dot.draw();
     x += (nextDot.x - dot.x) * .3;
     y += (nextDot.y - dot.y) * .3;

@@ -1,14 +1,16 @@
+@import '../vars-mixins';
+
 .cursor-trail {
    pointer-events: none;
    z-index: 100;
    position: absolute;
 
-   width: .5rem;
-   height: .5rem;
+   width: rem(8);
+   height: rem(8);
 
    animation: vibrate-1 1s linear infinite both;
 
-   border-radius: .25rem;
+   border-radius: rem(4);
 
    &_color {
       &_0 {
@@ -27,16 +29,16 @@
       transform: translate(0);
    }
    20% {
-      transform: translate(-1px, 1px);
+      transform: translate(rem(-1), rem(1));
    }
    40% {
-      transform: translate(-1px, -1px);
+      transform: translate(rem(-1), rem(-1));
    }
    60% {
-      transform: translate(1px, 1px);
+      transform: translate(rem(1), rem(1));
    }
    80% {
-      transform: translate(1px, -1px);
+      transform: translate(rem(1), rem(-1));
    }
    100% {
       transform: translate(0);

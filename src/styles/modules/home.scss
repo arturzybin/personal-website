@@ -1,16 +1,12 @@
-.home {
-   font-family: Raleway;
+@import '../vars-mixins';
 
+.home {
    position: relative;
 
    overflow: hidden;
 
    height: 100vh;
-
-   animation: gradient 10s ease infinite;
-
-   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-   background-size: 400% 400%;
+   @include gradient-background();
 
    &__content-container {
       position: absolute;
@@ -28,18 +24,20 @@
    &__title {
       font-size: 0;
 
-      margin: 1rem 0;
+      margin: rem(16) 0;
    }
 
    &__letter {
-      font-size: 3.5rem;
+      font-size: rem(56);
 
       display: inline-block;
+
       transition-duration: .1s;
 
       &:hover {
-         color: #000;
          transition-duration: .1s;
+
+         color: #000;
       }
 
       &_animated {
@@ -48,7 +46,7 @@
    }
 
    &__wordspace {
-      font-size: 3rem;
+      font-size: rem(48);
    }
 
 
@@ -56,14 +54,14 @@
       font-size: 1.5rem;
 
       box-sizing: content-box;
-      height: 2rem;
-      padding: .3rem 1rem;
+      height: rem(32);
+      padding: rem(5) rem(16);
 
       transition: all .3s ease-out;
       text-decoration: none;
 
       color: #fff;
-      border: .125rem solid #fff;
+      border: rem(2) solid #fff;
       background-color: transparent;
 
       &:hover {
@@ -77,11 +75,11 @@
                fill: #fff;
 
                &.arrow-bottom {
-                  transform: translateY(-1rem);
+                  transform: translateY(rem(-16));
                }
 
                &.arrow-top {
-                  transform: translateY(1rem);
+                  transform: translateY(rem(16));
                }
             }
          }
@@ -92,8 +90,8 @@
       position: relative;
       top: .25rem;
 
-      width: 1.5rem;
-      height: 1.5rem;
+      width: rem(24);
+      height: rem(24);
 
       transition: all .3s ease-out;
       transform: rotate(-90deg);
@@ -123,13 +121,13 @@
       right: 10%;
       bottom: 0;
 
-      padding: 10rem;
+      padding: rem(160);
       .triangle {
          &_outer {
-            width: 30rem;
+            width: rem(480);
          }
          &_inner {
-            width: 30rem;
+            width: rem(480);
          }
       }
       .camera {
@@ -145,13 +143,13 @@
       top: 20%;
       left: 60%;
 
-      padding: 5rem;
+      padding: rem(80);
       .triangle {
          &_outer {
-            height: 2rem;
+            height: rem(32);
          }
          &_inner {
-            height: 2rem;
+            height: rem(32);
          }
       }
       .camera {
@@ -162,17 +160,6 @@
    }
 }
 
-@keyframes gradient {
-   0% {
-      background-position: 0 50%;
-   }
-   50% {
-      background-position: 100% 50%;
-   }
-   100% {
-      background-position: 0 50%;
-   }
-}
 @keyframes appear {
    from {
       opacity: 0;

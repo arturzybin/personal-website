@@ -1,8 +1,15 @@
 @import './normalize';
+
+html{scroll-behavior:smooth}
 * {
    cursor: none;
+   font-family: Raleway;
 }
 
-@import './modules/cursort-trail.scss';
+
+@import './media';
+@import './modules/cursort-trail';
 @import './modules/triangles';
 @import './modules/home';
+@import './modules/about';
+@import './modules/skill';
