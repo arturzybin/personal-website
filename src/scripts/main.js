@@ -7,6 +7,6 @@ import {
 
 import {animateCursorTrail} from './modules/cursorTrail';
 
-// animateCursorTrail();
+animateCursorTrail();
 animateHomeLettersAppear();
 setupHomeLettersAnimation();
