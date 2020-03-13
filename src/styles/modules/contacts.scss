@@ -1,0 +1,128 @@
+@import '../vars-mixins';
+
+.contacts {
+   position: relative;
+
+   height: rem(200);
+   padding-top: rem(30);
+   overflow: hidden;
+
+   &:before {
+      position: absolute;
+      top: rem(-20);
+
+      width: 110%;
+      height: rem(50);
+
+      content: '';
+      transform: rotate(1deg);
+
+      background-color: #f5f5f5;
+   }
+
+   @include gradient-background();
+
+   &__title {
+      @include title();
+      font-size: rem(25);
+
+      &:after {
+         height: rem(25);
+      }
+   }
+
+   &__icons-raw {
+      position: absolute;
+      top: auto;
+      right: 0;
+      bottom: 20%;
+      left: 0;
+
+      width: rem(320);
+      height: rem(70);
+      margin: auto;
+   }
+
+   &__flip-container {
+      float: left;
+
+      margin: rem(10);
+
+      perspective: 1000;
+
+      &:hover .contacts__flipper {
+         transform: rotateY(180deg);
+      }
+   }
+
+   &__flipper,
+   &__flipper-front,
+   &__flipper-back {
+      font-size: rem(30);
+      line-height: rem(60);
+
+      width: rem(60);
+      height: rem(60);
+
+      text-align: center;
+
+      border-radius: rem(20);
+   }
+
+   &__flipper {
+      position: relative;
+
+      transition: .6s;
+
+      transform-style: preserve-3d;
+   }
+
+   &__flipper-front,
+   &__flipper-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      backface-visibility: hidden;
+   }
+
+   &__flipper-front {
+      z-index: 2;
+
+      color: white;
+      background-color: #fff;
+      filter: invert(.2);
+
+      &_resume {
+         img {
+            transform: translateX(.15rem);
+         }
+      }
+
+
+      img {
+         width: 50%;
+         
+
+         vertical-align: middle;
+      }
+   }
+
+   &__flipper-back {
+      transform: rotateY(180deg);
+
+      background-color: lightblue;
+
+      p {
+         font-family: 'Kaushan Script', cursive;
+         font-size: rem(13);
+
+         margin-top: 0;
+
+         color: white;
+         border: 1px solid white;
+         border-radius: rem(20);
+         background-color: #333;
+      }
+   }
+}
