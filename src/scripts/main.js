@@ -7,7 +7,11 @@ import {
 
 import  {
    startSkillsGradientAnimation
-} from './modules/skills';
+} from './modules/about';
+
+import {
+   startProjectCubesAnimation
+} from './modules/projects';
 
 import {animateCursorTrail} from './modules/cursorTrail';
 
@@ -15,3 +19,4 @@ animateCursorTrail();
 animateHomeLettersAppear();
 setupHomeLettersAnimation();
 startSkillsGradientAnimation();
+startProjectCubesAnimation();

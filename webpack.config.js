@@ -2,7 +2,7 @@ const path = require('path');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -20,7 +20,7 @@ const optimization = () => {
          chunks: 'all'
       }
    }
-   
+
    if (isProd) {
       config.minimizer = [
          new OptimizeCssAssetsWebpackPlugin(),
@@ -76,6 +76,12 @@ module.exports = {
       filename: filename('js'),
       path: path.resolve(__dirname, 'dist'),
    },
+   resolve: {
+      extensions: ['.js', '.scss', '.css'],
+      alias: {
+         'img': path.resolve(__dirname, 'src/img/'),
+      }
+   },
    optimization: optimization(),
    devServer: {
       port: 4200,
@@ -96,6 +102,7 @@ module.exports = {
                   }
                },
                'css-loader',
+               'resolve-url-loader',
                'postcss-loader',
             ]
          },
@@ -110,6 +117,7 @@ module.exports = {
                   }
                },
                'css-loader',
+               'resolve-url-loader',
                'postcss-loader',
                'sass-loader'
             ]

@@ -30,9 +30,9 @@ function createWordsArray(container) {
 }
 
 
-function animateSkills(words, lastWordIndex) {
+function animateSkills(words, previousWordIndex) {
    let randomNumber = Math.floor(Math.random() * 14);
-   while (randomNumber === lastWordIndex) {
+   while (randomNumber === previousWordIndex) {
       randomNumber = Math.floor(Math.random() * 14);
    }
    const wordLetters = words[randomNumber];

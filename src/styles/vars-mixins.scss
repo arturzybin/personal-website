@@ -104,3 +104,76 @@
       }
    }
 }
+
+
+
+@mixin rainbow-text {
+   position: relative;
+
+   padding: 0;
+
+   list-style: none;
+
+   &-layer {
+      animation: rainbow 1.5s ease-in-out infinite;
+
+      color: #fff;
+      text-shadow: rem(-1) rem(-1) 0 #000,
+      1px rem(-1) 0 #000,
+      rem(-1) rem(1) 0 #000,
+      rem(1) rem(1) 0 #000,
+      rem(4) rem(4) 0 rgba(0, 0, 0, .2);
+
+
+
+      @for $i from 1 through 8 {
+         &:nth-child(#{$i}) {
+            z-index: #{8 - $i};
+            left: #{$i}px;
+
+            animation-delay: #{$i / 10}s;
+         }
+      }
+
+      &:not(:first-child) {
+         position: absolute;
+         top: 0;
+         right: 0;
+         left: 0;
+
+         text-align: center;
+      }
+
+      &--white {
+         color: #fff;
+      }
+      &--orange {
+         color: #d49c3d;
+      }
+      &--red {
+         color: #d14b3d;
+      }
+      &--violet {
+         color: #cf52eb;
+      }
+      &--blue {
+         color: #44a3f7;
+      }
+      &--green {
+         color: #5acb3c;
+      }
+      &--yellow {
+         color: #debf40;
+      }
+   }
+}
+
+@keyframes rainbow {
+   0%,
+   100% {
+      transform: translateY(.3rem);
+   }
+   50% {
+      transform: translateY(-.3rem);
+   }
+}

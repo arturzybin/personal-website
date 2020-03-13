@@ -191,3 +191,10 @@
       transform: scale3d(1, 1, 1);
    }
 }
+
+
+@media screen and (max-width: 400px) {
+   .home__developer {
+      display: block;
+   }
+}
