@@ -43,6 +43,14 @@ const plugins = () => {
          {
             from: path.resolve(__dirname, 'src/img'),
             to: path.resolve(__dirname, 'dist/img'),
+         },
+         {
+            from: path.resolve(__dirname, 'src/favicons'),
+            to: path.resolve(__dirname, 'dist/favicons'),
+         },
+         {
+            from: path.resolve(__dirname, 'src/files'),
+            to: path.resolve(__dirname, 'dist/'),
          }
       ]),
       new MiniCssExtractPlugin({
