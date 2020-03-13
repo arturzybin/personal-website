@@ -1,10 +1,12 @@
-@import '../vars-mixins';
+@import '../mixins';
 
 .about {
    padding: rem(50) 0;
+   overflow: hidden;
 
    &__title {
       @include title();
+      @include appear(right);
    }
 
    &__info-container {
@@ -14,6 +16,7 @@
    }
 
    &__photo {
+      @include appear(left);
       display: inline-block;
 
       box-sizing: border-box;
@@ -31,6 +34,7 @@
    }
 
    &__text {
+      @include appear(right);
       font-size: rem(30);
 
       display: inline-block;
@@ -44,6 +48,7 @@
    }
 
    &__skills {
+      @include appear(down);
       font-size: rem(25);
       line-height: rem(50);
 

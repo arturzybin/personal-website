@@ -167,7 +167,6 @@
       }
    }
 }
-
 @keyframes rainbow {
    0%,
    100% {
@@ -175,5 +174,58 @@
    }
    50% {
       transform: translateY(-.3rem);
+   }
+}
+
+
+@mixin appear($direction) {
+   @if $direction == up {
+      animation: up .8s ease-in-out;
+   } @else if $direction == right {
+      animation: right .8s ease-in-out;
+   } @else if $direction == down {
+      animation: down .8s ease-in-out;
+   } @else if $direction == left {
+      animation: left .8s ease-in-out;
+   }
+}
+@keyframes up{
+   from {
+      transform: translateY(-300%);
+      opacity: 0;
+   }
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+@keyframes down{
+   from {
+      transform: translateY(300%);
+      opacity: 0;
+   }
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+@keyframes left{
+   from {
+      transform: translateX(-300%);
+      opacity: 0;
+   }
+   to {
+      transform: translateX(0);
+      opacity: 1;
+   }
+}
+@keyframes right{
+   from {
+      transform: translateX(300%);
+      opacity: 0;
+   }
+   to {
+      transform: translateX(0);
+      opacity: 1;
    }
 }

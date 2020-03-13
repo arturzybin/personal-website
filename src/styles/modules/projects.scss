@@ -1,6 +1,7 @@
-@import '../vars-mixins';
+@import '../mixins';
 
-.projects {
+.projects {   
+   overflow: hidden;
    position: relative;
 
    width: 100%;
@@ -22,11 +23,13 @@
    }
 
    &__title {
+      @include appear(down);
       margin-bottom: rem(50) !important;
       @include title();
    }
 
    &__container {
+      @include appear(right);
       display: grid;
 
       width: rem(1500);
@@ -51,6 +54,19 @@
 
       &:hover {
          box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+      }
+
+      &:nth-child(1) {
+         @include appear(down);
+      }
+      &:nth-child(2) {
+         @include appear(up);
+      }
+      &:nth-child(3) {
+         @include appear(down);
+      }
+      &:nth-child(4) {
+         @include appear(up);
       }
    }
 

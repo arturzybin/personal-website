@@ -1,8 +1,9 @@
+@import '../mixins';
 
 .triangle-container {
    overflow: hidden;
    display: inline-block;
-   padding: 3.125rem;
+   padding: rem(50);
 }
 
 .camera_x {
@@ -26,8 +27,8 @@
    &_outer {
       position: absolute;
 
-      width: 15.625rem;
-      height: 15.625rem;
+      width: rem(250);
+      height: rem(240);
 
       &::before {
          position: absolute;
@@ -42,10 +43,10 @@
    }
 
    &_inner {
-      width: 15rem;
-      height: 15rem;
+      width: rem(240);
+      height: rem(240);
 
-      transform: translateY(2px);
+      transform: translateY(0.125rem);
       @include gradient-background();
    }
 
@@ -62,11 +63,11 @@
 
 @keyframes slide {
    0% {
-      transform: translateX(-150px);
+      transform: translateX(-9.375rem);
    }
 
    100% {
-      transform: translateX(300px);
+      transform: translateX(18.75rem);
    }
 }
 
