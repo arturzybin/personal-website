@@ -1,5 +1,9 @@
 export { animateCursorTrail };
 
+let isAnimationStop = false;
+document.addEventListener('touchstart', () => isAnimationStop = true, {
+  once: true
+})
 
 document.addEventListener("mousemove", function (event) {
   mouse.x = event.pageX;
@@ -8,6 +12,10 @@ document.addEventListener("mousemove", function (event) {
 
 
 function animateCursorTrail() {
+  if (isAnimationStop) {
+    deleteAllDots();
+    return;
+  }
   draw();
   requestAnimationFrame(animateCursorTrail);
 }
@@ -72,4 +80,12 @@ class Dot {
 
 for (let i = 0; i < 30; i++) {
   dots.push(new Dot());
+}
+
+
+function deleteAllDots() {
+  const dots = document.querySelectorAll('.cursor-trail');
+  dots.forEach((dot) => {
+    dot.remove();
+  })
 }
