@@ -76,7 +76,6 @@ const babelOptions = () => {
 }
 
 
-
 module.exports = {
    context: path.resolve(__dirname, 'src'),
    entry: './scripts/main.js',
