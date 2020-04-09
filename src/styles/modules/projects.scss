@@ -114,33 +114,29 @@
       }
    }
 
-
+   .projects__cube-side {
+      background-size: 100% !important;
+   }
 
    &__movie-searcher {
       .projects__cube-side {
          &_front {
             background: url(~img/movie-searcher-01.png);
-            background-size: 100%;
          }
          &_left {
             background: url(~img/movie-searcher-02.png);
-            background-size: 100%;
          }
          &_right {
             background: url(~img/movie-searcher-03.png);
-            background-size: 100%;
          }
          &_top {
             background: url(~img/movie-searcher-04.png);
-            background-size: 100%;
          }
          &_bottom {
             background: url(~img/movie-searcher-02.png);
-            background-size: 100%;
          }
          &_back {
             background: url(~img/movie-searcher-04.png);
-            background-size: 100%;
          }
       }
    }
@@ -149,27 +145,44 @@
       .projects__cube-side {
          &_front {
             background: url(~img/2che-01.png);
-            background-size: 100%;
          }
          &_left {
             background: url(~img/2che-02.png);
-            background-size: 100%;
          }
          &_right {
             background: url(~img/2che-03.png);
-            background-size: 100%;
          }
          &_top {
             background: url(~img/2che-04.png);
-            background-size: 100%;
          }
          &_bottom {
             background: url(~img/2che-01.png);
-            background-size: 100%;
          }
          &_back {
             background: url(~img/2che-04.png);
-            background-size: 100%;
+         }
+      }
+   }
+
+   &__comments-system {
+      .projects__cube-side {
+         &_front {
+            background: url(~img/comments-system-01.png);
+         }
+         &_left {
+            background: url(~img/comments-system-02.png);
+         }
+         &_right {
+            background: url(~img/comments-system-03.png);
+         }
+         &_top {
+            background: url(~img/comments-system-04.png);
+         }
+         &_bottom {
+            background: url(~img/comments-system-05.png);
+         }
+         &_back {
+            background: url(~img/comments-system-06.png);
          }
       }
    }
@@ -178,27 +191,21 @@
       .projects__cube-side {
          &_front {
             background: url(~img/snake-01.png);
-            background-size: 100%;
          }
          &_left {
             background: url(~img/snake-02.png);
-            background-size: 100%;
          }
          &_right {
             background: url(~img/snake-03.png);
-            background-size: 100%;
          }
          &_top {
             background: url(~img/snake-04.png);
-            background-size: 100%;
          }
          &_bottom {
             background: url(~img/snake-02.png);
-            background-size: 100%;
          }
          &_back {
             background: url(~img/snake-03.png);
-            background-size: 100%;
          }
       }
    }
@@ -207,27 +214,21 @@
       .projects__cube-side {
          &_front {
             background: url(~img/todo-01.png);
-            background-size: 100%;
          }
          &_left {
             background: url(~img/todo-02.png);
-            background-size: 100%;
          }
          &_right {
             background: url(~img/todo-03.png);
-            background-size: 100%;
          }
          &_top {
             background: url(~img/todo-04.png);
-            background-size: 100%;
          }
          &_bottom {
             background: url(~img/todo-02.png);
-            background-size: 100%;
          }
          &_back {
             background: url(~img/todo-03.png);
-            background-size: 100%;
          }
       }
    }
@@ -236,27 +237,21 @@
       .projects__cube-side {
          &_front {
             background: url(~img/minions-shop-01.png);
-            background-size: 100%;
          }
          &_left {
             background: url(~img/minions-shop-02.png);
-            background-size: 100%;
          }
          &_right {
             background: url(~img/minions-shop-03.png);
-            background-size: 100%;
          }
          &_top {
             background: url(~img/minions-shop-04.png);
-            background-size: 100%;
          }
          &_bottom {
             background: url(~img/minions-shop-05.png);
-            background-size: 100%;
          }
          &_back {
             background: url(~img/minions-shop-06.png);
-            background-size: 100%;
          }
       }
    }

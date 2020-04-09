@@ -17,7 +17,7 @@ function createWordsArray(container) {
    let wordIndex = 0;
 
    for (let node of charsNodes) {
-      if (node.textContent === ' ' && words[wordIndex].length) {
+      if (node.textContent === '|' && words[wordIndex].length) {
          wordIndex++;
          words[wordIndex] = [];
       }
