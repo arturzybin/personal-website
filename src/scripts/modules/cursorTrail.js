@@ -6,8 +6,8 @@ document.addEventListener('touchstart', () => isAnimationStop = true, {
 })
 
 document.addEventListener("mousemove", function (event) {
-  mouse.x = event.pageX;
-  mouse.y = event.pageY;
+  mouse.x = event.clientX;
+  mouse.y = event.clientY;
 });
 
 

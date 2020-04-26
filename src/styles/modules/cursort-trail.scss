@@ -3,7 +3,7 @@
 .cursor-trail {
    pointer-events: none;
    z-index: 100;
-   position: absolute;
+   position: fixed;
 
    width: rem(8);
    height: rem(8);
