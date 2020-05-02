@@ -18,6 +18,7 @@ function animateLetter(letter) {
 
 
 function animateHomeLettersAppear() {
+   document.querySelector('.home__title').classList.remove('home__title_hidden')
    const letters = document.querySelectorAll('.home__letter');
 
    letters.forEach((letter, index) => {

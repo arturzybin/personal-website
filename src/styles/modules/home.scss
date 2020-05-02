@@ -25,6 +25,10 @@
       font-size: 0;
 
       margin: rem(16) rem(15);
+
+      &_hidden {
+         visibility: hidden;
+      }
    }
 
    &__letter {
