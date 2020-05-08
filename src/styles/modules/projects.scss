@@ -255,6 +255,29 @@
          }
       }
    }
+
+   &__exchange-rate-checker {
+      .projects__cube-side {
+         &_front {
+            background: url(~img/exchange-rate-checker-01.png);
+         }
+         &_left {
+            background: url(~img/exchange-rate-checker-02.png);
+         }
+         &_right {
+            background: url(~img/exchange-rate-checker-03.png);
+         }
+         &_top {
+            background: url(~img/exchange-rate-checker-01.png);
+         }
+         &_bottom {
+            background: url(~img/exchange-rate-checker-02.png);
+         }
+         &_back {
+            background: url(~img/exchange-rate-checker-03.png);
+         }
+      }
+   }
 }
 
 
