@@ -1,8 +1,11 @@
 export {startSkillsGradientAnimation};
+let wordsCount = 0
 
 function startSkillsGradientAnimation() {
    const container = document.querySelector('.text-gradient-container');
    if (!container) return;
+   wordsCount = container.textContent.split(' | ').length
+   console.log(wordsCount)
    const chars = container.textContent.trim().split('');
    container.innerHTML = '<span>' + chars.join('</span><span>') + '</span>'
 
@@ -31,9 +34,9 @@ function createWordsArray(container) {
 
 
 function animateSkills(words, previousWordIndex) {
-   let randomNumber = Math.floor(Math.random() * 14);
+   let randomNumber = Math.floor(Math.random() * wordsCount);
    while (randomNumber === previousWordIndex) {
-      randomNumber = Math.floor(Math.random() * 14);
+      randomNumber = Math.floor(Math.random() * wordsCount);
    }
    const wordLetters = words[randomNumber];
 
