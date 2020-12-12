@@ -1,377 +1,444 @@
 @import '../mixins';
 
-.projects {   
-   overflow: hidden;
-   position: relative;
+.projects {
+    overflow: hidden;
+    position: relative;
 
-   width: 100%;
-   padding: rem(50) 0;
+    width: 100%;
+    padding: rem(50) 0;
 
-   background-color: #f5f5f5;
+    background-color: #f5f5f5;
 
-   &:before {
-      position: absolute;
-      top: rem(-20);
+    &:before {
+        position: absolute;
+        top: rem(-20);
 
-      width: 100%;
-      height: rem(50);
+        width: 100%;
+        height: rem(50);
 
-      content: '';
-      transform: rotate(1deg);
+        content: '';
+        transform: rotate(1deg);
 
-      background-color: #fff;
-   }
+        background-color: #fff;
+    }
 
-   &__title {
-      @include appear(down);
-      margin-bottom: rem(50) !important;
-      @include title();
-   }
+    &__title {
+        @include appear(down);
+        margin-bottom: rem(50) !important;
+        @include title();
+    }
 
-   &__container {
-      @include appear(right);
-      display: grid;
+    &__container {
+        @include appear(right);
+        display: grid;
 
-      width: rem(1500);
-      margin: auto;
+        width: rem(1500);
+        margin: auto;
 
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: rem(40) rem(22);
-      justify-items: center;
-   }
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: rem(40) rem(22);
+        justify-items: center;
+    }
 
 
-   &__project {
-      position: relative;
+    &__project {
+        position: relative;
 
-      width: rem(280);
-      padding: rem(20);
-      padding-bottom: rem(60);
+        width: rem(280);
+        padding: rem(20);
+        padding-bottom: rem(60);
 
-      transition: all .3s cubic-bezier(.25,.8,.25,1);
+        transition: all .3s cubic-bezier(.25, .8, .25, 1);
 
-      box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
 
-      &:hover {
-         box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
-      }
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+        }
 
-      &:nth-child(1) {
-         @include appear(down);
-      }
-      &:nth-child(2) {
-         @include appear(up);
-      }
-      &:nth-child(3) {
-         @include appear(down);
-      }
-      &:nth-child(4) {
-         @include appear(up);
-      }
-   }
+        &:nth-child(1) {
+            @include appear(down);
+        }
 
-   &__project-name {
-      font-size: rem(30);
+        &:nth-child(2) {
+            @include appear(up);
+        }
 
-      margin: rem(10) 0 rem(30);
+        &:nth-child(3) {
+            @include appear(down);
+        }
 
-      color: transparent;
+        &:nth-child(4) {
+            @include appear(up);
+        }
+    }
 
-      @include rainbow-text();
-   }
+    &__project-name {
+        font-size: rem(30);
 
-   &__cube-container {
-      margin: rem(20) 0 rem(50) 5%;
-   }
+        margin: rem(10) 0 rem(30);
 
-   &__project-button {
-      position: absolute;
-      bottom: rem(10);
+        color: transparent;
 
-      margin: 0;
-      padding: 0;
+        @include rainbow-text();
+    }
 
-      transition: all .3s cubic-bezier(.25,.8,.25,1);
+    &__cube-container {
+        margin: rem(20) 0 rem(50) 5%;
+    }
 
-      border: none;
-      border-radius: rem(10);
-      outline: none;
-      box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
-      &:hover {
-         box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
-      }
+    &__project-button {
+        position: absolute;
+        bottom: rem(10);
 
-      img {
-         height: rem(50);
-      }
+        margin: 0;
+        padding: 0;
 
-      &_github {
-         left: 20%;
-      }
+        transition: all .3s cubic-bezier(.25, .8, .25, 1);
 
-      &_website {
-         right: 20%;
-      }
-   }
+        border: none;
+        border-radius: rem(10);
+        outline: none;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
 
-   .projects__cube-side {
-      background-size: 100% !important;
-   }
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+        }
 
-   &__movie-searcher {
-      .projects__cube-side {
-         &_front {
-            background: url(~img/movie-searcher-01.png);
-         }
-         &_left {
-            background: url(~img/movie-searcher-02.png);
-         }
-         &_right {
-            background: url(~img/movie-searcher-03.png);
-         }
-         &_top {
-            background: url(~img/movie-searcher-04.png);
-         }
-         &_bottom {
-            background: url(~img/movie-searcher-02.png);
-         }
-         &_back {
-            background: url(~img/movie-searcher-04.png);
-         }
-      }
-   }
+        img {
+            height: rem(50);
+        }
 
-   &__2che {
-      .projects__cube-side {
-         &_front {
-            background: url(~img/2che-01.png);
-         }
-         &_left {
-            background: url(~img/2che-02.png);
-         }
-         &_right {
-            background: url(~img/2che-03.png);
-         }
-         &_top {
-            background: url(~img/2che-04.png);
-         }
-         &_bottom {
-            background: url(~img/2che-01.png);
-         }
-         &_back {
-            background: url(~img/2che-04.png);
-         }
-      }
-   }
+        &_github {
+            left: 20%;
+        }
 
-   &__comments-system {
-      .projects__cube-side {
-         &_front {
-            background: url(~img/comments-system-01.png);
-         }
-         &_left {
-            background: url(~img/comments-system-02.png);
-         }
-         &_right {
-            background: url(~img/comments-system-03.png);
-         }
-         &_top {
-            background: url(~img/comments-system-04.png);
-         }
-         &_bottom {
-            background: url(~img/comments-system-05.png);
-         }
-         &_back {
-            background: url(~img/comments-system-06.png);
-         }
-      }
-   }
+        &_website {
+            right: 20%;
+        }
+    }
 
-   &__snake {
-      .projects__cube-side {
-         &_front {
-            background: url(~img/snake-01.png);
-         }
-         &_left {
-            background: url(~img/snake-02.png);
-         }
-         &_right {
-            background: url(~img/snake-03.png);
-         }
-         &_top {
-            background: url(~img/snake-04.png);
-         }
-         &_bottom {
-            background: url(~img/snake-02.png);
-         }
-         &_back {
-            background: url(~img/snake-03.png);
-         }
-      }
-   }
+    .projects__cube-side {
+        background-size: 100% !important;
+    }
 
-   &__todo {
-      .projects__cube-side {
-         &_front {
-            background: url(~img/todo-01.png);
-         }
-         &_left {
-            background: url(~img/todo-02.png);
-         }
-         &_right {
-            background: url(~img/todo-03.png);
-         }
-         &_top {
-            background: url(~img/todo-04.png);
-         }
-         &_bottom {
-            background: url(~img/todo-02.png);
-         }
-         &_back {
-            background: url(~img/todo-03.png);
-         }
-      }
-   }
+    &__movie-searcher {
+        .projects__cube-side {
+            &_front {
+                background: url(~img/movie-searcher-01.png);
+            }
 
-   &__minions-shop {
-      .projects__cube-side {
-         &_front {
-            background: url(~img/minions-shop-01.png);
-         }
-         &_left {
-            background: url(~img/minions-shop-02.png);
-         }
-         &_right {
-            background: url(~img/minions-shop-03.png);
-         }
-         &_top {
-            background: url(~img/minions-shop-04.png);
-         }
-         &_bottom {
-            background: url(~img/minions-shop-05.png);
-         }
-         &_back {
-            background: url(~img/minions-shop-06.png);
-         }
-      }
-   }
+            &_left {
+                background: url(~img/movie-searcher-02.png);
+            }
 
-   &__exchange-rate-checker {
-      .projects__cube-side {
-         &_front {
-            background: url(~img/exchange-rate-checker-01.png);
-         }
-         &_left {
-            background: url(~img/exchange-rate-checker-02.png);
-         }
-         &_right {
-            background: url(~img/exchange-rate-checker-03.png);
-         }
-         &_top {
-            background: url(~img/exchange-rate-checker-01.png);
-         }
-         &_bottom {
-            background: url(~img/exchange-rate-checker-02.png);
-         }
-         &_back {
-            background: url(~img/exchange-rate-checker-03.png);
-         }
-      }
-   }
+            &_right {
+                background: url(~img/movie-searcher-03.png);
+            }
+
+            &_top {
+                background: url(~img/movie-searcher-04.png);
+            }
+
+            &_bottom {
+                background: url(~img/movie-searcher-02.png);
+            }
+
+            &_back {
+                background: url(~img/movie-searcher-04.png);
+            }
+        }
+    }
+
+    &__2che {
+        .projects__cube-side {
+            &_front {
+                background: url(~img/2che-01.png);
+            }
+
+            &_left {
+                background: url(~img/2che-02.png);
+            }
+
+            &_right {
+                background: url(~img/2che-03.png);
+            }
+
+            &_top {
+                background: url(~img/2che-04.png);
+            }
+
+            &_bottom {
+                background: url(~img/2che-01.png);
+            }
+
+            &_back {
+                background: url(~img/2che-04.png);
+            }
+        }
+    }
+
+    &__comments-system {
+        .projects__cube-side {
+            &_front {
+                background: url(~img/comments-system-01.png);
+            }
+
+            &_left {
+                background: url(~img/comments-system-02.png);
+            }
+
+            &_right {
+                background: url(~img/comments-system-03.png);
+            }
+
+            &_top {
+                background: url(~img/comments-system-04.png);
+            }
+
+            &_bottom {
+                background: url(~img/comments-system-05.png);
+            }
+
+            &_back {
+                background: url(~img/comments-system-06.png);
+            }
+        }
+    }
+
+    &__snake {
+        .projects__cube-side {
+            &_front {
+                background: url(~img/snake-01.png);
+            }
+
+            &_left {
+                background: url(~img/snake-02.png);
+            }
+
+            &_right {
+                background: url(~img/snake-03.png);
+            }
+
+            &_top {
+                background: url(~img/snake-04.png);
+            }
+
+            &_bottom {
+                background: url(~img/snake-02.png);
+            }
+
+            &_back {
+                background: url(~img/snake-03.png);
+            }
+        }
+    }
+
+    &__todo {
+        .projects__cube-side {
+            &_front {
+                background: url(~img/todo-01.png);
+            }
+
+            &_left {
+                background: url(~img/todo-02.png);
+            }
+
+            &_right {
+                background: url(~img/todo-03.png);
+            }
+
+            &_top {
+                background: url(~img/todo-04.png);
+            }
+
+            &_bottom {
+                background: url(~img/todo-02.png);
+            }
+
+            &_back {
+                background: url(~img/todo-03.png);
+            }
+        }
+    }
+
+    &__minions-shop {
+        .projects__cube-side {
+            &_front {
+                background: url(~img/minions-shop-01.png);
+            }
+
+            &_left {
+                background: url(~img/minions-shop-02.png);
+            }
+
+            &_right {
+                background: url(~img/minions-shop-03.png);
+            }
+
+            &_top {
+                background: url(~img/minions-shop-04.png);
+            }
+
+            &_bottom {
+                background: url(~img/minions-shop-05.png);
+            }
+
+            &_back {
+                background: url(~img/minions-shop-06.png);
+            }
+        }
+    }
+
+    &__grandma-editor {
+        .projects__cube-side {
+            &_front {
+                background: url(~img/grandma-editor-01.png);
+            }
+
+            &_left {
+                background: url(~img/grandma-editor-02.png);
+            }
+
+            &_right {
+                background: url(~img/grandma-editor-03.png);
+            }
+
+            &_top {
+                background: url(~img/grandma-editor-04.png);
+            }
+
+            &_bottom {
+                background: url(~img/grandma-editor-05.png);
+            }
+
+            &_back {
+                background: url(~img/grandma-editor-06.png);
+            }
+        }
+    }
+
+    &__exchange-rate-checker {
+        .projects__cube-side {
+            &_front {
+                background: url(~img/exchange-rate-checker-01.png);
+            }
+
+            &_left {
+                background: url(~img/exchange-rate-checker-02.png);
+            }
+
+            &_right {
+                background: url(~img/exchange-rate-checker-03.png);
+            }
+
+            &_top {
+                background: url(~img/exchange-rate-checker-01.png);
+            }
+
+            &_bottom {
+                background: url(~img/exchange-rate-checker-02.png);
+            }
+
+            &_back {
+                background: url(~img/exchange-rate-checker-03.png);
+            }
+        }
+    }
 }
 
 
 @media screen and (max-width: 1530px) {
-   .projects {
-      &__container {
-         width: rem(1400);
-      }
-   }
+    .projects {
+        &__container {
+            width: rem(1400);
+        }
+    }
 }
 
 @media screen and (max-width: 1430px) {
-   .projects {
-      &__container {
-         width: rem(1000);
-         grid-template-columns: repeat(3, 1fr);
+    .projects {
+        &__container {
+            width: rem(1000);
+            grid-template-columns: repeat(3, 1fr);
 
-         & .projects__project:last-child {
-            grid-column: 2;
-         }
-      }
-   }
+            & .projects__project:last-child {
+                grid-column: 2;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width : 1224px) {
-   .projects {
-      &__project-description {
-         font-size: rem(20);
-      }
-   }
+    .projects {
+        &__project-description {
+            font-size: rem(20);
+        }
+    }
 }
 
 @media screen and (max-width: 700px) {
-   .projects {
-      &__container {
-         width: rem(700);
-         grid-template-columns: repeat(2, 1fr);
-      }
-   }
+    .projects {
+        &__container {
+            width: rem(700);
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
 
 @media screen and (max-width: 450px) {
-   .projects {
-      &__container {
-         width: rem(500);
-         grid-template-columns: repeat(1, 1fr);
+    .projects {
+        &__container {
+            width: rem(500);
+            grid-template-columns: repeat(1, 1fr);
 
-         & .projects__project:last-child {
-            grid-column: auto;
-         }
-      }
+            & .projects__project:last-child {
+                grid-column: auto;
+            }
+        }
 
-      &__project {
-         width: rem(400);
-         padding-bottom: rem(70);
-      }
+        &__project {
+            width: rem(400);
+            padding-bottom: rem(70);
+        }
 
-      &__cube-container {
-         margin-left: 18%;
-      }
+        &__cube-container {
+            margin-left: 18%;
+        }
 
-      &__project-description {
-         font-size: rem(25);
-      }
+        &__project-description {
+            font-size: rem(25);
+        }
 
-      &__project-button {
-         img{
-            height: rem(60);
-         }
-      }
-   }
+        &__project-button {
+            img {
+                height: rem(60);
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 290px) {
-   .projects {
-      &__container {
-         width: rem(400);
-      }
+    .projects {
+        &__container {
+            width: rem(400);
+        }
 
-      &__project {
-         width: rem(280);
-         padding-bottom: rem(70);
-      }
+        &__project {
+            width: rem(280);
+            padding-bottom: rem(70);
+        }
 
-      &__cube-container {
-         margin-left: 5%;
-      }
-   }
+        &__cube-container {
+            margin-left: 5%;
+        }
+    }
 }
 
 @media screen and (max-width: 250px) {
-   .projects {
-      &__container {
-         width: rem(300);
-      }
-   }
+    .projects {
+        &__container {
+            width: rem(300);
+        }
+    }
 }
